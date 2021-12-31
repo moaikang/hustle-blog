@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 import Profile from "@home/components/profile";
 import Category from "@home/components/category";
-import PostList from "./components/post-list/PostList";
+import PostList from "./components/post-list";
 
 const DUMMY = {
   name: "Moai Kang",
