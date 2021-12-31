@@ -1,4 +1,4 @@
-import { createContext } from "React";
+import { createContext } from "react";
 
 export const HomeContext = createContext({
   category: "all",
