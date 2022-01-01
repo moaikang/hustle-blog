@@ -1,12 +1,12 @@
+import { SummaryData } from "@pages/api/summary";
 import Tag from "@shared/components/tag";
 import Text from "@shared/components/text";
 import Palette from "@shared/styles/Palette";
 import React, { ReactElement } from "react";
-import { Post } from "../../PostList";
 import * as S from "./Styles";
 
 type Props = {
-  post: Post;
+  post: SummaryData;
 };
 
 function PostItem({ post }: Props): ReactElement {
@@ -32,9 +32,7 @@ function PostItem({ post }: Props): ReactElement {
         </S.Description>
 
         <S.TagWrapper>
-          {post.tags.map((tag, idx) => (
-            <Tag key={idx}>{tag}</Tag>
-          ))}
+          <Tag>{post.category}</Tag>
         </S.TagWrapper>
       </S.Content>
     </S.Wrapper>

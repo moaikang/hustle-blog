@@ -10,6 +10,7 @@ export const Wrapper = styled.div`
   height: fit-content;
   overflow: hidden;
   border-radius: 50%;
+  flex-shrink: 0;
 `;
 
 export const AvatarImg = styled(Image)<AvatarImgProps>`

@@ -2,44 +2,47 @@ import React, { ReactElement } from "react";
 import * as S from "./Styles";
 import Text from "@shared/components/text";
 import Palette from "@shared/styles/Palette";
+import Link from "next/link";
+import useCategoryQuery from "@home/hooks/useCategoryQuery";
+import useFetchCategory from "@home/hooks/useFetchCategory";
 
-type Props = {};
+function Category(): ReactElement {
+  const { isCategoriesLoading, categories, error } = useFetchCategory();
+  const { isCategorySelected } = useCategoryQuery();
 
-function Category({}: Props): ReactElement {
-  const [selectedCategory, setSelectedCategory] = React.useState<string>("All");
+  if (isCategoriesLoading) {
+    return <div></div>;
+  }
 
-  const categories = [
-    "All",
-    "Front-end",
-    "React",
-    "JavaScript",
-    "TypeScript",
-    "Web",
-    "Infra",
-    "Retrospect",
-  ];
+  if (error) {
+    return <div>에러 발생</div>;
+  }
 
   return (
     <S.Wrapper>
       <S.CategoryList>
-        {categories.map((category, idx) => {
-          const isSelected = selectedCategory === category;
+        {categories &&
+          categories.map((categoryObj) => {
+            const { category } = categoryObj;
+            const isSelected = isCategorySelected(category);
 
-          return (
-            <S.CategoryItem key={category}>
-              <Text
-                decorate={{
-                  fontWeight: "bold",
-                  textColor: isSelected ? Palette.BLACK : Palette.GREY,
-                  underline: isSelected,
-                }}
-                onClick={() => setSelectedCategory(category)}
-              >
-                {category}
-              </Text>
-            </S.CategoryItem>
-          );
-        })}
+            return (
+              <S.CategoryItem key={categoryObj.id}>
+                <Link href={`/?category=${category.toLowerCase()}`} passHref>
+                  <Text
+                    as="a"
+                    decorate={{
+                      fontWeight: "bold",
+                      textColor: isSelected ? Palette.BLACK : Palette.GREY,
+                      underline: isSelected,
+                    }}
+                  >
+                    {category}
+                  </Text>
+                </Link>
+              </S.CategoryItem>
+            );
+          })}
       </S.CategoryList>
     </S.Wrapper>
   );

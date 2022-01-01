@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 import Palette from "@shared/styles/Palette";
 import * as S from "./Styles";
 import React, { ReactChild, ReactElement } from "react";
@@ -29,32 +30,28 @@ const defaultDecorateTemplate: NonNullableDecorate = {
   underline: false,
 };
 
-function Text({
-  decorate,
-  children,
-  as,
-  className,
-  ...restProps
-}: Props): ReactElement {
-  const defaultDecorate = decorate
-    ? {
-        textColor: decorate.textColor ?? Palette.BLACK,
-        fontWeight: decorate.fontWeight ?? "regular",
-        fontSize: decorate.fontSize ?? 12,
-        underline: decorate.underline ?? false,
-      }
-    : defaultDecorateTemplate;
+const Text = React.forwardRef(
+  ({ decorate, children, as, className, ...restProps }: Props, ref) => {
+    const defaultDecorate = decorate
+      ? {
+          textColor: decorate.textColor ?? Palette.BLACK,
+          fontWeight: decorate.fontWeight ?? "regular",
+          fontSize: decorate.fontSize ?? 12,
+          underline: decorate.underline ?? false,
+        }
+      : defaultDecorateTemplate;
 
-  return (
-    <S.Text
-      decorate={defaultDecorate}
-      as={as ?? "span"}
-      className={className}
-      {...restProps}
-    >
-      {children}
-    </S.Text>
-  );
-}
+    return (
+      <S.Text
+        decorate={defaultDecorate}
+        as={as ?? "span"}
+        className={className}
+        {...restProps}
+      >
+        {children}
+      </S.Text>
+    );
+  }
+);
 
 export default Text;
