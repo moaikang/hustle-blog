@@ -1,13 +1,11 @@
 import React, { ReactElement } from "react";
-import root from "react-shadow";
+import root from "react-shadow/emotion";
 import ReactMarkdown from "react-markdown";
 import * as S from "./Styles";
 
 type Props = {
   mdText: string;
 };
-
-const markdownPlugInProps = {};
 
 function MarkdownRenderer({ mdText }: Props): ReactElement {
   return (

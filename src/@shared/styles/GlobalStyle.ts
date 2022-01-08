@@ -141,7 +141,7 @@ const reset = css`
   }
 `;
 
-const font = css`
+export const fontDeclaration = css`
   @font-face {
     font-family: "Pretendard-Light";
     src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff")
@@ -182,7 +182,7 @@ const font = css`
 
 const GlobalStyle = css`
   ${reset}
-  ${font}
+  ${fontDeclaration}
 `;
 
 export default GlobalStyle;
