@@ -1,40 +1,39 @@
 import Avatar from "@shared/components/avartar";
-import Grid from "@shared/components/grid";
 import React, { ReactElement } from "react";
 import * as S from "./Styles";
 import Text from "@shared/components/text";
 import Palette from "@shared/styles/Palette";
 
-type Props = {
-  name: string;
-  image: string;
-  description: string;
-  email: string;
-};
-
 const CONTACT_LABEL = "Contact";
 
-function Profile({ name, image, description, email }: Props): ReactElement {
+const PROFILE = {
+  AVATAR_URL: "https://avatars.githubusercontent.com/u/52201658?v=4",
+  NAME: "moaikang",
+  BIO: "No Stack Engineeeeeer 👻",
+  EMAIL: "moaikang.dev@gmail.com",
+};
+
+function Profile(): ReactElement {
   return (
     <S.Wrapper>
       <S.Content>
-        <Avatar src={image} size={72} />
+        <Avatar src={PROFILE.AVATAR_URL} size={72} />
 
         <S.AboutWrapper>
           <Text
             className="name"
             decorate={{ fontWeight: "bold", fontSize: 18 }}
           >
-            {name}
+            {PROFILE.NAME}
           </Text>
-          <Text decorate={{ fontSize: 12 }}>{description}</Text>
+          <Text decorate={{ fontSize: 12 }}>{PROFILE.BIO}</Text>
 
           <S.ContactWrapper>
             <Text className="contact-label" decorate={{ fontWeight: "bold" }}>
               {CONTACT_LABEL}
             </Text>
 
-            <Text decorate={{ textColor: Palette.GREY }}>{email}</Text>
+            <Text decorate={{ textColor: Palette.GREY }}>{PROFILE.EMAIL}</Text>
           </S.ContactWrapper>
         </S.AboutWrapper>
       </S.Content>

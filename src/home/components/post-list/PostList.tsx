@@ -1,23 +1,25 @@
 import useCategoryQuery from "@home/hooks/useCategoryQuery";
-import useFetchSummary from "@home/hooks/useFetchSummary";
+import { buildCategoryPostsMap } from "@home/utils/PostHandler";
+import { capitalize } from "@shared/utils/StringUtil";
 import React, { ReactElement } from "react";
 import PostItem from "./components/post-item";
 import * as S from "./Styles";
 
-function PostList(): ReactElement {
-  const { categoryQuery } = useCategoryQuery();
-  const { isSummariesLoading, summaries, error } = useFetchSummary(
-    categoryQuery || "All"
-  );
+type Props = {
+  categoryPostsMap: ReturnType<typeof buildCategoryPostsMap>;
+};
 
-  if (isSummariesLoading) {
-    return <div></div>;
-  }
+function PostList({ categoryPostsMap }: Props): ReactElement {
+  const { categoryQuery } = useCategoryQuery();
+
+  const category = capitalize(categoryQuery || "All");
+  const posts = categoryPostsMap[category];
 
   return (
     <S.Wrapper>
-      {summaries &&
-        summaries.map((post, idx) => <PostItem post={post} key={idx} />)}
+      {posts.map((post) => (
+        <PostItem post={post} key={post.id} />
+      ))}
     </S.Wrapper>
   );
 }

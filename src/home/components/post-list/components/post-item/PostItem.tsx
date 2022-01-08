@@ -1,4 +1,3 @@
-import { SummaryData } from "@pages/api/summary";
 import Tag from "@shared/components/tag";
 import Text from "@shared/components/text";
 import Palette from "@shared/styles/Palette";
@@ -6,7 +5,7 @@ import React, { ReactElement } from "react";
 import * as S from "./Styles";
 
 type Props = {
-  post: SummaryData;
+  post: any;
 };
 
 function PostItem({ post }: Props): ReactElement {
