@@ -1,5 +1,5 @@
 import useCategoryQuery from "@home/hooks/useCategoryQuery";
-import { buildCategoryPostsMap } from "@home/utils/PostHandler";
+import { buildCategoryPostsMap } from "@shared/helpers/PostHandler";
 import { capitalize } from "@shared/utils/StringUtil";
 import React, { ReactElement } from "react";
 import PostItem from "./components/post-item";

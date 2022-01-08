@@ -1,10 +1,13 @@
+import { PostData } from "@shared/helpers/PostHandler";
 import React, { ReactElement } from "react";
 import MarkdownRenderer from "./components/markdown-renderer";
 
-type Props = {};
+type Props = {
+  postData: PostData;
+};
 
-function Post({}: Props): ReactElement {
-  return <MarkdownRenderer />;
+function Post({ postData }: Props): ReactElement {
+  return <MarkdownRenderer mdText={postData.text} />;
 }
 
 export default Post;

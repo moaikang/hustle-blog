@@ -2,7 +2,7 @@ import React, { ReactElement } from "react";
 import Profile from "@home/components/profile";
 import Category from "@home/components/category";
 import PostList from "./components/post-list";
-import { buildCategoryPostsMap } from "./utils/PostHandler";
+import { buildCategoryPostsMap } from "@shared/helpers/PostHandler";
 
 type Props = {
   categories: string[];

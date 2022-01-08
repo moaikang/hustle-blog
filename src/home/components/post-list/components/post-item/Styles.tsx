@@ -1,6 +1,4 @@
-import { css } from "@emotion/react";
 import styled from "@emotion/styled";
-import Responsive from "@shared/styles/Responsive";
 
 export const Wrapper = styled.li`
   margin-bottom: 8px;
@@ -11,6 +9,10 @@ export const Wrapper = styled.li`
   &:hover {
     box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.08);
   }
+`;
+
+export const AnchorTag = styled.a`
+  text-decoration: none;
 `;
 
 export const Content = styled.section``;

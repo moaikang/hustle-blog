@@ -11,11 +11,39 @@ type PostMetaData = {
   date: string;
 };
 
+export type PostData = {
+  text: string;
+} & PostMetaData;
+
 type CategoryPostsMap = {
   [category: string]: PostMetaData[];
 };
 
 const postsDirectory = path.join(process.cwd(), "posts");
+
+export function getPostById(id: string): PostData {
+  let postData: Nullable<PostData> = null;
+
+  traverse((path, fileName) => {
+    const fileId = fileName.replace(/\.md$/, "");
+
+    if (fileId === id) {
+      const fileContents = fs.readFileSync(path, "utf8");
+      const matterResult = matter(fileContents);
+
+      postData = {
+        id,
+        ...matterResult.data,
+        date: matterResult.data.date.toString(),
+        text: matterResult.content,
+      } as unknown as PostData;
+    }
+  });
+
+  if (!postData) throw new Error(`There is no postId = ${id}`);
+
+  return postData;
+}
 
 export function buildCategoryPostsMap(): CategoryPostsMap {
   const directories = fs.readdirSync(postsDirectory);
@@ -65,6 +93,20 @@ type Data = {
   date: any;
   id: string;
 };
+
+function traverse(callback: (path: string, fileName: string) => void) {
+  const directories = fs.readdirSync(postsDirectory);
+
+  for (const directory of directories) {
+    const directoryPath = path.join(postsDirectory, directory);
+    const fileNames = fs.readdirSync(directoryPath);
+
+    fileNames.forEach((fileName) => {
+      const filePath = path.join(directoryPath, fileName);
+      callback(filePath, fileName);
+    });
+  }
+}
 
 function sortByDate(prevData: Data, nextData: Data): number {
   if (!(isDateExist(prevData) && isDateExist(nextData))) {

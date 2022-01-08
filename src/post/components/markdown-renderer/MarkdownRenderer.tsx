@@ -1,15 +1,20 @@
 import React, { ReactElement } from "react";
 import root from "react-shadow";
 import ReactMarkdown from "react-markdown";
+import * as S from "./Styles";
 
-type Props = {};
+type Props = {
+  mdText: string;
+};
 
 const markdownPlugInProps = {};
 
-function MarkdownRenderer({}: Props): ReactElement {
+function MarkdownRenderer({ mdText }: Props): ReactElement {
   return (
     <root.div mode="closed">
-      <ReactMarkdown># 안녕</ReactMarkdown>
+      <S.Wrapper>
+        <ReactMarkdown>{mdText}</ReactMarkdown>
+      </S.Wrapper>
     </root.div>
   );
 }

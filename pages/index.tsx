@@ -6,8 +6,8 @@ import {
   parseCategories,
   capitalizeCategories,
   sortCategories,
-} from "@home/utils/CategoryHandler";
-import { buildCategoryPostsMap } from "@home/utils/PostHandler";
+} from "@shared/helpers//CategoryHandler";
+import { buildCategoryPostsMap } from "@shared/helpers/PostHandler";
 
 type StaticProps = {
   categories: string[];

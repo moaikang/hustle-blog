@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -19,36 +15,17 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@shared/*": [
-        "src/@shared/*"
-      ],
-      "@home": [
-        "src/home"
-      ],
-      "@home/*": [
-        "src/home/*"
-      ],
-      "@post/*": [
-        "src/post/*"
-      ],
-      "@pages/*": [
-        "pages/*"
-      ],
-      "@icons/*": [
-        "public/icons/*"
-      ],
-      "@images/*": [
-        "public/images/*"
-      ]
+      "@shared/*": ["src/@shared/*"],
+      "@home": ["src/home"],
+      "@home/*": ["src/home/*"],
+      "@post/*": ["src/post/*"],
+      "@pages/*": ["pages/*"],
+      "@icons/*": ["public/icons/*"],
+      "@images/*": ["public/images/*"]
     },
     "isolatedModules": true
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "typeRoots": ["./@types", "./node_modules/@types"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }
