@@ -9,7 +9,7 @@ const markdownPlugInProps = {};
 function MarkdownRenderer({}: Props): ReactElement {
   return (
     <root.div mode="closed">
-      <ReactMarkdown></ReactMarkdown>
+      <ReactMarkdown># 안녕</ReactMarkdown>
     </root.div>
   );
 }
