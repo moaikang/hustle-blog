@@ -3,7 +3,7 @@ import Grid from "../grid";
 import * as S from "./Styles";
 
 const TEXTS = {
-  LOGO: "moai.log",
+  LOGO: "moai.blog",
 };
 
 function Header(): ReactElement {
