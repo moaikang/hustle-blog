@@ -9,7 +9,14 @@ export const Wrapper = styled.section`
 export const Content = styled.div`
   display: flex;
   align-items: center;
-  transform: translateX(-2px);
+  transform: translateX(-1px);
+
+  ${Responsive.mobile(
+    css`
+      flex-direction: column;
+      align-items: normal;
+    `
+  )}
 `;
 
 export const AboutWrapper = styled.div`
@@ -19,10 +26,12 @@ export const AboutWrapper = styled.div`
 
   & > .name {
     margin-bottom: 6px;
+    line-height: 22px;
   }
 
   ${Responsive.mobile(css`
-    margin-left: 20px;
+    margin-top: 20px;
+    margin-left: 0;
   `)}
 `;
 

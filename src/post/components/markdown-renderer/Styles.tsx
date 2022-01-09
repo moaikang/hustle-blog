@@ -10,5 +10,11 @@ export const Wrapper = styled.section`
 
   & img {
     max-width: 100%;
+    width: inherit;
+  }
+
+  & code {
+    max-width: 100%;
+    width: inherit;
   }
 `;

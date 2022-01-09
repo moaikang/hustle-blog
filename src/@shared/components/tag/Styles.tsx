@@ -13,4 +13,12 @@ export const Tag = styled.button<TagProps>`
   border-radius: 6px;
   cursor: pointer;
   background-color: ${(props) => props.color || "#333"};
+
+  & * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  &:focus {
+    outline: none;
+  }
 `;

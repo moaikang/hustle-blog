@@ -20,4 +20,10 @@ export const CategoryItem = styled.li`
   margin-right: 24px;
   white-space: nowrap;
   cursor: pointer;
+
+  -webkit-tap-highlight-color: transparent;
+
+  &:focus {
+    outline: none;
+  }
 `;

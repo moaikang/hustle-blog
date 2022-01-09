@@ -16,10 +16,7 @@ function PostItem({ post }: Props): ReactElement {
         <S.AnchorTag>
           <S.Content>
             <S.Title>
-              <Text
-                decorate={{ fontSize: 24, fontWeight: "extra-bold" }}
-                as="h1"
-              >
+              <Text decorate={{ fontSize: 24, fontWeight: "bold" }} as="h1">
                 {post.title}
               </Text>
             </S.Title>
