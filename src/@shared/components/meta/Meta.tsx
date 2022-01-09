@@ -11,7 +11,14 @@ function Meta(): ReactElement {
       />
       <meta name="description" content="개발자 강근우의 기술 블로그입니다." />
       <meta name="author" content="moaikang" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta property="og:url" content="https://moai.blog" />
+      <meta property="og:title" content="moai.log" />
+      <meta property="og:type" content="website" />
+      <meta
+        property="og:image"
+        content="https://i2.ruliweb.com/img/20/12/24/1769325e6fa148aed.jpg"
+      />
+      <meta property="og:description" content="개발자 강근우의 기술 블로그" />
     </>
   );
 }
