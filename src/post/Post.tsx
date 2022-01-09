@@ -1,5 +1,5 @@
-import { PostData } from "@shared/helpers/PostHandler";
 import React, { ReactElement } from "react";
+import { PostData } from "src/types/post";
 import MarkdownRenderer from "./components/markdown-renderer";
 
 type Props = {
