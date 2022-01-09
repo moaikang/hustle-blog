@@ -3,10 +3,11 @@ import Text from "@shared/components/text";
 import Palette from "@shared/styles/Palette";
 import Link from "next/link";
 import React, { ReactElement } from "react";
+import { PostMetaData } from "src/types/post";
 import * as S from "./Styles";
 
 type Props = {
-  post: any;
+  post: PostMetaData;
 };
 
 function PostItem({ post }: Props): ReactElement {

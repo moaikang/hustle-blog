@@ -1,10 +1,10 @@
 import type { GetStaticPropsContext, NextPage } from "next";
 import Post from "@post/Post";
 import {
-  buildCategoryPostsMap,
+  buildCategoryPostMetaDataMap,
   getPostById,
-  PostData,
 } from "@shared/helpers/PostHandler";
+import { PostData } from "src/types/post";
 
 type UrlQuery = {
   id: string;
@@ -13,6 +13,8 @@ type UrlQuery = {
 type StaticProps = {
   postData: PostData;
 };
+
+const ALL_CATEGORY = "All";
 
 const PostPage: NextPage<StaticProps> = ({ postData }) => {
   return <Post postData={postData} />;
@@ -23,7 +25,7 @@ export async function getStaticProps(context: GetStaticPropsContext<UrlQuery>) {
 
   if (!params) {
     throw new Error(
-      "There is no params property in post[id] getStaticProps' argument context."
+      "There is no params property in post/[id].tsx getStaticProps' argument context."
     );
   }
 
@@ -37,8 +39,8 @@ export async function getStaticProps(context: GetStaticPropsContext<UrlQuery>) {
 }
 
 export async function getStaticPaths() {
-  const categoryPostsMap = buildCategoryPostsMap();
-  const paths = categoryPostsMap["All"].map((postMetaData) => ({
+  const categoryPostsMap = buildCategoryPostMetaDataMap();
+  const paths = categoryPostsMap[ALL_CATEGORY].map((postMetaData) => ({
     params: { id: postMetaData.id },
   }));
 

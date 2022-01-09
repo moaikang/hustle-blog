@@ -1,21 +1,30 @@
 import type { GetStaticPropsResult, NextPage } from "next";
 import Home from "@home/Home";
-import _ from "lodash";
-
 import {
   parseCategories,
   capitalizeCategories,
   sortCategories,
 } from "@shared/helpers//CategoryHandler";
-import { buildCategoryPostsMap } from "@shared/helpers/PostHandler";
+import {
+  buildCategoryPostMetaDataMap,
+  CategoryPostMetaDataMap,
+} from "@shared/helpers/PostHandler";
 
 type StaticProps = {
   categories: string[];
-  categoryPostsMap: ReturnType<typeof buildCategoryPostsMap>;
+  categoryPostMetaDataMap: CategoryPostMetaDataMap;
 };
 
-const MainPage: NextPage<StaticProps> = ({ categories, categoryPostsMap }) => {
-  return <Home categories={categories} categoryPostsMap={categoryPostsMap} />;
+const MainPage: NextPage<StaticProps> = ({
+  categories,
+  categoryPostMetaDataMap,
+}) => {
+  return (
+    <Home
+      categories={categories}
+      categoryPostMetaDataMap={categoryPostMetaDataMap}
+    />
+  );
 };
 
 export async function getStaticProps(): Promise<
@@ -25,12 +34,12 @@ export async function getStaticProps(): Promise<
   const capitalizedCategories = capitalizeCategories(categories);
   const sortedCategories = sortCategories(capitalizedCategories);
 
-  const categoryPostsMap = buildCategoryPostsMap();
+  const categoryPostMetaDataMap = buildCategoryPostMetaDataMap();
 
   return {
     props: {
       categories: sortedCategories,
-      categoryPostsMap: categoryPostsMap,
+      categoryPostMetaDataMap,
     },
   };
 }

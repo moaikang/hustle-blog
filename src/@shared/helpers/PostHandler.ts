@@ -2,20 +2,9 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { capitalize } from "@shared/utils/StringUtil";
+import { PostData, PostMetaData } from "src/types/post";
 
-type PostMetaData = {
-  id: string;
-  title: string;
-  description: string;
-  category: string;
-  date: string;
-};
-
-export type PostData = {
-  text: string;
-} & PostMetaData;
-
-type CategoryPostsMap = {
+export type CategoryPostMetaDataMap = {
   [category: string]: PostMetaData[];
 };
 
@@ -45,7 +34,7 @@ export function getPostById(id: string): PostData {
   return postData;
 }
 
-export function buildCategoryPostsMap(): CategoryPostsMap {
+export function buildCategoryPostMetaDataMap(): CategoryPostMetaDataMap {
   const directories = fs.readdirSync(postsDirectory);
 
   let postsMap: { [category: string]: any[] } = {};
@@ -89,11 +78,6 @@ function isDateExist(matterData: {
   return "date" in matterData;
 }
 
-type Data = {
-  date: any;
-  id: string;
-};
-
 function traverse(callback: (path: string, fileName: string) => void) {
   const directories = fs.readdirSync(postsDirectory);
 
@@ -107,6 +91,11 @@ function traverse(callback: (path: string, fileName: string) => void) {
     });
   }
 }
+
+type Data = {
+  date: any;
+  id: string;
+};
 
 function sortByDate(prevData: Data, nextData: Data): number {
   if (!(isDateExist(prevData) && isDateExist(nextData))) {

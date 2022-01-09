@@ -2,21 +2,21 @@ import React, { ReactElement } from "react";
 import Profile from "@home/components/profile";
 import Category from "@home/components/category";
 import PostList from "./components/post-list";
-import { buildCategoryPostsMap } from "@shared/helpers/PostHandler";
+import { CategoryPostMetaDataMap } from "@shared/helpers/PostHandler";
 
 type Props = {
   categories: string[];
-  categoryPostsMap: ReturnType<typeof buildCategoryPostsMap>;
+  categoryPostMetaDataMap: CategoryPostMetaDataMap;
 };
 
 function Home(props: Props): ReactElement {
-  const { categories, categoryPostsMap } = props;
+  const { categories, categoryPostMetaDataMap } = props;
 
   return (
     <>
       <Profile />
       <Category categories={categories} />
-      <PostList categoryPostsMap={categoryPostsMap} />
+      <PostList categoryPostMetaDataMap={categoryPostMetaDataMap} />
     </>
   );
 }
