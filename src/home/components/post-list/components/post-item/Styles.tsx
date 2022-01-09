@@ -7,10 +7,8 @@ export const Wrapper = styled.li`
   border-radius: 4px;
   padding: 24px 20px 24px 20px;
   cursor: pointer;
-
-  &:hover {
-    box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.08);
-  }
+  width: calc(100% + 40px);
+  transform: translateX(-24px);
 
   ${Responsive.mobile(
     css`
@@ -21,6 +19,12 @@ export const Wrapper = styled.li`
       }
     `
   )}
+
+  ${Responsive.desktop(css`
+    &:hover {
+      box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.08);
+    }
+  `)}
 
   -webkit-tap-highlight-color: transparent;
 `;
