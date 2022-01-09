@@ -9,6 +9,7 @@ export const Wrapper = styled.section`
   line-height: 1.5rem;
 
   & img {
+    width: 100%;
     max-width: 100%;
     width: inherit;
   }

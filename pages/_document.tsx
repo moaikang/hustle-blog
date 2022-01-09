@@ -1,4 +1,3 @@
-import Meta from "@shared/components/meta";
 import Document, {
   Html,
   Head,
@@ -16,9 +15,7 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="ko">
-        <Head>
-          <Meta />
-        </Head>
+        <Head />
 
         <body>
           <Main />

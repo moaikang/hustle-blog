@@ -9,6 +9,8 @@ import {
   buildCategoryPostMetaDataMap,
   CategoryPostMetaDataMap,
 } from "@shared/helpers/PostHandler";
+import Head from "next/head";
+import Meta from "@shared/components/meta";
 
 type StaticProps = {
   categories: string[];
@@ -20,10 +22,17 @@ const MainPage: NextPage<StaticProps> = ({
   categoryPostMetaDataMap,
 }) => {
   return (
-    <Home
-      categories={categories}
-      categoryPostMetaDataMap={categoryPostMetaDataMap}
-    />
+    <>
+      <Head>
+        <title>moai.blog</title>
+        <Meta />
+      </Head>
+
+      <Home
+        categories={categories}
+        categoryPostMetaDataMap={categoryPostMetaDataMap}
+      />
+    </>
   );
 };
 

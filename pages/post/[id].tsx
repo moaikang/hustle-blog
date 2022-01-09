@@ -5,6 +5,8 @@ import {
   getPostById,
 } from "@shared/helpers/PostHandler";
 import { PostData } from "src/types/post";
+import Head from "next/head";
+import Meta from "@shared/components/meta";
 
 type UrlQuery = {
   id: string;
@@ -17,7 +19,15 @@ type StaticProps = {
 const ALL_CATEGORY = "All";
 
 const PostPage: NextPage<StaticProps> = ({ postData }) => {
-  return <Post postData={postData} />;
+  return (
+    <>
+      <Head>
+        <title>{`${postData.title} | moai.blog`}</title>
+        <Meta />
+      </Head>
+      <Post postData={postData} />
+    </>
+  );
 };
 
 export async function getStaticProps(context: GetStaticPropsContext<UrlQuery>) {
