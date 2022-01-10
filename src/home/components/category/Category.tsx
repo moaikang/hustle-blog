@@ -26,7 +26,9 @@ function Category(props: Props): ReactElement {
                   as="a"
                   decorate={{
                     fontWeight: "bold",
-                    textColor: isSelected ? Palette.BLACK : Palette.GREY,
+                    textColor: isSelected
+                      ? Palette.BLACK
+                      : Palette.LESS_LIGHT_GREY,
                     underline: isSelected,
                   }}
                 >
