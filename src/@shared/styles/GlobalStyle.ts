@@ -160,9 +160,9 @@ export const fontDeclaration = css`
 
   @font-face {
     font-family: "Pretendard-Bold";
-    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff")
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff")
       format("woff");
-    font-weight: 700;
+    font-weight: 600;
     font-style: normal;
   }
 
