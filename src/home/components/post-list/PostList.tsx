@@ -1,4 +1,5 @@
 import useCategoryQuery from "@home/hooks/useCategoryQuery";
+import { ALL_CATEGORY } from "@shared/constants/Category";
 import {
   buildCategoryPostMetaDataMap,
   CategoryPostMetaDataMap,
@@ -15,7 +16,7 @@ type Props = {
 function PostList({ categoryPostMetaDataMap }: Props): ReactElement {
   const { categoryQuery } = useCategoryQuery();
 
-  const category = capitalize(categoryQuery || "All");
+  const category = capitalize(categoryQuery || ALL_CATEGORY);
   const postMetaData = categoryPostMetaDataMap[category];
 
   return (

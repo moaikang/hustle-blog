@@ -1,3 +1,4 @@
+import { ALL_CATEGORY } from "@shared/constants/Category";
 import { useRouter } from "next/router";
 
 function useCategoryQuery() {
@@ -8,8 +9,14 @@ function useCategoryQuery() {
   const isCategorySelected = (categoryStr: string): boolean => {
     const lowerCaseCategory = categoryStr.toLowerCase();
 
-    if (lowerCaseCategory === "all" && !category) return true;
-    if (lowerCaseCategory === category) return true;
+    if (lowerCaseCategory === ALL_CATEGORY.toLowerCase() && !category) {
+      return true;
+    }
+
+    if (lowerCaseCategory === category) {
+      return true;
+    }
+
     return false;
   };
 

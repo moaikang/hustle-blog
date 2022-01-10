@@ -7,6 +7,7 @@ import {
 import { PostData } from "src/types/post";
 import Head from "next/head";
 import Meta from "@shared/components/meta";
+import { ALL_CATEGORY } from "@shared/constants/Category";
 
 type UrlQuery = {
   id: string;
@@ -15,8 +16,6 @@ type UrlQuery = {
 type StaticProps = {
   postData: PostData;
 };
-
-const ALL_CATEGORY = "All";
 
 const PostPage: NextPage<StaticProps> = ({ postData }) => {
   return (
