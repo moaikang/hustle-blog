@@ -105,8 +105,6 @@ function sortByDate(prevData: Data, nextData: Data): number {
   const { date: prevDate } = prevData;
   const { date: nextDate } = nextData;
 
-  console.log(prevData, nextData);
-
   if (prevDate < nextDate) {
     return 1;
   }
