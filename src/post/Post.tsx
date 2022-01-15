@@ -1,5 +1,6 @@
 import React, { ReactElement } from "react";
 import { PostData } from "src/types/post";
+import Comments from "./components/comments";
 import MarkdownRenderer from "./components/markdown-renderer";
 
 type Props = {
@@ -7,7 +8,12 @@ type Props = {
 };
 
 function Post({ postData }: Props): ReactElement {
-  return <MarkdownRenderer mdText={postData.text} />;
+  return (
+    <>
+      <MarkdownRenderer mdText={postData.text} />
+      <Comments />
+    </>
+  );
 }
 
 export default Post;
