@@ -23,7 +23,7 @@ export function getPostById(id: string): PostData {
       postData = {
         id,
         ...matterResult.data,
-        date: matterResult.data.date.toString(),
+        date: matterResult.data.date.getTime(),
         text: matterResult.content,
       } as unknown as PostData;
     }
@@ -55,7 +55,7 @@ export function buildCategoryPostMetaDataMap(): CategoryPostMetaDataMap {
       return {
         id,
         ...matterResult.data,
-        date: matterResult.data.date.toString(),
+        date: matterResult.data.date.getTime(),
       };
     });
 
@@ -104,6 +104,8 @@ function sortByDate(prevData: Data, nextData: Data): number {
 
   const { date: prevDate } = prevData;
   const { date: nextDate } = nextData;
+
+  console.log(prevData, nextData);
 
   if (prevDate < nextDate) {
     return 1;
