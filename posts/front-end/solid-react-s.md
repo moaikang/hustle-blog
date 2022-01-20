@@ -328,3 +328,5 @@ export const Users = () => {
 ## 결론
 
 SOLID 원칙으로 각 파일의 코드 양을 줄이고 아름답고 재사용 가능한 구성 요소를 만드는 방법에 대해 알아보았습니다.
+
+원글: [How To Apply SOLID Principles To Clean Your Code in React - SRP](https://betterprogramming.pub/how-to-apply-solid-principles-to-clean-your-code-in-react-cdfd5e0a9cea)
