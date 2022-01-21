@@ -1,5 +1,5 @@
 ---
-title: SOLID 원칙을 리액트에 적용해 클린 코드를 만드는 방법 - 개방 폐쇄 원칙
+title: SOLID 원칙을 리액트에 적용해보자 - 개방 폐쇄 원칙
 description: How To Apply SOLID Principles To Clean Your Code in React - OCP 를 번역했습니다.
 category: Front-end
 date: 2022-01-21
