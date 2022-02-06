@@ -14,3 +14,16 @@ export const TrafficLight = styled.div`
   padding: 1em;
   box-sizing: border-box;
 `;
+
+export const DefaultCodeTag = styled.code`
+  max-width: 100%;
+  width: 100%;
+  white-space: pre-wrap;
+  word-break: break-word;
+  padding: 3px 2px;
+  overflow-wrap: break-word;
+  color: #eb5757;
+  border-radius: 3px;
+  background-color: rgba(135, 131, 120, 0.15);
+  line-height: normal;
+`;

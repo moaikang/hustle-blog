@@ -15,23 +15,32 @@ const CodeBlock: FunctionComponent<Omit<CodeProps, "ref">> = ({
   const match = /language-(\w+)/.exec(className || "");
   const { theme } = useBuildCodeBlockTheme();
 
-  return !inline && match ? (
-    <>
-      <S.TrafficLight />
-      <SyntaxHighlighter
-        style={theme}
-        language={match[1]}
-        PreTag="div"
-        {...props}
-      >
-        {String(children).replace(/\n$/, "")}
-      </SyntaxHighlighter>
-    </>
-  ) : (
-    <code className={className} {...props}>
-      {children}
-    </code>
-  );
+  const renderCodeTag = () => {
+    const isCodeBlock = !inline && match;
+
+    if (isCodeBlock)
+      return (
+        <>
+          <S.TrafficLight />
+          <SyntaxHighlighter
+            style={theme}
+            language={match[1]}
+            PreTag="div"
+            {...props}
+          >
+            {String(children).replace(/\n$/, "")}
+          </SyntaxHighlighter>
+        </>
+      );
+
+    return (
+      <S.DefaultCodeTag className={className} {...props}>
+        {children}
+      </S.DefaultCodeTag>
+    );
+  };
+
+  return renderCodeTag();
 };
 
 export default CodeBlock;
