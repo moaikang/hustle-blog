@@ -13,9 +13,11 @@ const PROFILE = {
   EMAIL: "moaikang.dev@gmail.com",
 };
 
-function Profile(): ReactElement {
+type Props = React.HTMLAttributes<HTMLElement>;
+
+function Profile(props: Props): ReactElement {
   return (
-    <S.Wrapper>
+    <S.Wrapper {...props}>
       <S.Content>
         <Avatar src={PROFILE.AVATAR_URL} size={72} />
 

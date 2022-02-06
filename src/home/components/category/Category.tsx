@@ -14,13 +14,17 @@ function Category(props: Props): ReactElement {
   const { isCategorySelected } = useCategoryQuery();
 
   return (
-    <S.Wrapper>
-      <S.CategoryList>
+    <S.Wrapper role="navigation">
+      <S.CategoryList role="tablist">
         {categories.map((category) => {
           const isSelected = isCategorySelected(category);
 
           return (
-            <S.CategoryItem key={category}>
+            <S.CategoryItem
+              key={category}
+              role="tab"
+              aria-selected={isSelected ? "true" : "false"}
+            >
               <Link href={`/?category=${category.toLowerCase()}`} passHref>
                 <Text
                   as="a"

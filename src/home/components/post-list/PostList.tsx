@@ -20,7 +20,7 @@ function PostList({ categoryPostMetaDataMap }: Props): ReactElement {
   const postMetaData = categoryPostMetaDataMap[category];
 
   return (
-    <S.Wrapper>
+    <S.Wrapper role="tabpanel">
       {postMetaData.map((postData) => (
         <PostItem post={postData} key={postData.id} />
       ))}

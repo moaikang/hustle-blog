@@ -1,5 +1,5 @@
 import React, { ReactElement } from "react";
-import Profile from "@home/components/profile";
+import Profile from "@shared/profile";
 import Category from "@home/components/category";
 import PostList from "./components/post-list";
 import { CategoryPostMetaDataMap } from "@shared/helpers/PostHandler";
