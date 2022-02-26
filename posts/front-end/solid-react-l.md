@@ -1,6 +1,6 @@
 ---
 title: SOLID 원칙을 리액트에 적용해보자 - 리스코브 치환 원칙
-description: How To Apply SOLID Principles To Clean Your Code in React - OCP 를 번역했습니다.
+description: How To Apply SOLID Principles To Clean Your Code in React - LSP 를 번역했습니다.
 category: Front-end
 date: 2022-01-22
 ---
