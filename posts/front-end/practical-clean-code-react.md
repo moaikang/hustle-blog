@@ -206,7 +206,7 @@ function DraggableInput() {
 컴포넌트의 복잡도가 올라간다면, 로직을 커스텀 훅이나 함수로 추출하는 것을 고려해 볼 수 있습니다.
 
 ```jsx
-// AS IS..
+// AS IS...
 function Component() {
   const [input, setInput] = useState("");
 
@@ -255,7 +255,7 @@ function Component() {
 조건문이 복잡할 때에는 조건에 따른 타입과 조건에 따른 행동을 분리하게 된다면 컴포넌트의 복잡도를 줄일 수 있습니다.
 
 ```tsx
-// AS IS
+// AS IS...
 const Card = (props: Props) => {
   const { application, column } = props;
   const applyStatus = application.apply_status;
@@ -277,7 +277,7 @@ const Card = (props: Props) => {
 ```
 
 ```tsx
-// TO BE
+// TO BE...
 const Card = (props: Props) => {
   const { application, column } = props;
   const cardType = buildCardType(application, column);
@@ -319,7 +319,7 @@ function Component() {
 ```
 
 ```jsx
-// To BE...
+// TO BE...
 function Component() {
   const emotion = getEmotion();
 
@@ -438,7 +438,7 @@ function PlayListItem({ item, onClick }) {
 ```
 
 ```jsx
-//To Be...
+// TO BE...
 function PlayList() {
   const [list, setList] = useState(INITIAL_LIST);
 
@@ -580,7 +580,7 @@ function check() {
 저는 여러 디자인 시스템 라이브러리의 인터페이스를 참고하면서 개발하였습니다.
 
 ```jsx
-// AS IS
+// AS IS...
 function Button({ whenClickMouse }) {
   return <button type="button" onClick={whenClickMouse} />;
 }
@@ -591,7 +591,7 @@ function Component() {
 ```
 
 ```jsx
-// AS IS
+// TO BE...
 function Button({ onClick }) {
   return <button type="button" onClick={onClick} />;
 }
@@ -641,7 +641,7 @@ function PlayListItem({ item, onClick }) {
 ```
 
 ```jsx
-//To Be...
+// TO BE...
 function PlayList() {
   const [list, setList] = useState(INITIAL_LIST);
 
@@ -789,7 +789,7 @@ function Header(props) {
 이러한 상황을 막기 위해서는, 컴포넌트에서 조건에 따라 여러 형태로 변경되거나, 기획 변경이 예상되는 UI는 외부에서 Composition을 이용해 주입해주어 변경에 유연하게 만들어 줄 수 있습니다.
 
 ```jsx
-// TO BE
+// TO BE...
 function Header(props) {
   return (
     <header className="header">
@@ -845,7 +845,7 @@ function Card(props) {
 이를 일반적인 목적으로 추상화하여 추출하면 다음에 재사용하기에 용이하다 느꼈습니다.
 
 ```jsx
-// AS IS
+// AS IS...
 import { useEffect, useReducer, useState } from "react";
 
 const initialState = {
@@ -895,7 +895,7 @@ export const useGetRemoteData = (url) => {
 ```
 
 ```jsx
-// TO BE
+// TO BE...
 
 // useHttpGetRequest.jsx
 import { useEffect, useReducer, useState } from "react";
