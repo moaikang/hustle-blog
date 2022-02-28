@@ -1,9 +1,6 @@
 import useCategoryQuery from "@home/hooks/useCategoryQuery";
 import { ALL_CATEGORY } from "@shared/constants/Category";
-import {
-  buildCategoryPostMetaDataMap,
-  CategoryPostMetaDataMap,
-} from "@shared/helpers/PostHandler";
+import { CategoryPostMetaDataMap } from "@shared/helpers/PostHandler";
 import { capitalize } from "@shared/utils/StringUtil";
 import React, { ReactElement } from "react";
 import PostItem from "./components/post-item";
@@ -27,5 +24,4 @@ function PostList({ categoryPostMetaDataMap }: Props): ReactElement {
     </S.Wrapper>
   );
 }
-
 export default PostList;
