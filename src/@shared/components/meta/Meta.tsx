@@ -14,12 +14,12 @@ function Meta({ ogTitle, ogDescription }: Props): ReactElement {
         name="keyword"
         content="기술 블로그, TIL, 프론트엔드, 자바스크립트, 리액트, 타입스크립트, 회고"
       />
-      <meta name="description" content="개발자 강근우의 기술 블로그입니다." />
+      <meta name="description" content="끄적끄적 기술 블로그" />
       <meta name="author" content="moaikang" />
       <meta property="og:url" content="https://moai.blog" />
       <meta
         property="og:title"
-        content={ogTitle ?? "개발자 강근우의 기술 블로그"}
+        content={ogTitle ?? "끄적끄적 moai 기술 블로그"}
       />
       <meta property="og:type" content="website" />
       <meta

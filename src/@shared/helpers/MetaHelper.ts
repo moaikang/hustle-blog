@@ -1,5 +1,5 @@
 export function buildOgTitle(title: string): string {
-  return `${title} | 개발자 강근우의 블로그`;
+  return `${title} | moai.blog`;
 }
 
 export function buildTitle(title: string): string {
