@@ -141,13 +141,18 @@ const reset = css`
   }
 `;
 
+const fontCommonCSS = css`
+  font-style: normal;
+  font-display: swap;
+`;
+
 export const fontDeclaration = css`
   @font-face {
     font-family: "Pretendard-Light";
     src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff")
       format("woff");
     font-weight: 300;
-    font-style: normal;
+    ${fontCommonCSS}
   }
 
   @font-face {
@@ -155,7 +160,7 @@ export const fontDeclaration = css`
     src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
       format("woff");
     font-weight: 400;
-    font-style: normal;
+    ${fontCommonCSS}
   }
 
   @font-face {
@@ -163,7 +168,7 @@ export const fontDeclaration = css`
     src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff")
       format("woff");
     font-weight: 600;
-    font-style: normal;
+    ${fontCommonCSS}
   }
 
   @font-face {
@@ -171,7 +176,7 @@ export const fontDeclaration = css`
     src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff")
       format("woff");
     font-weight: 800;
-    font-style: normal;
+    ${fontCommonCSS}
   }
 
   body {
