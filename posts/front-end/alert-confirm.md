@@ -59,7 +59,7 @@ if (isConfirmed) {
 ```
 
 **window.confirm을 했을 때 나오는 UI**
-<img width="515" alt="image" src="https://user-images.githubusercontent.com/52201658/180597269-de02e486-4569-473f-affb-d193a96d0ef0.png">
+![window-confirm-default-ui](https://user-images.githubusercontent.com/52201658/180597269-de02e486-4569-473f-affb-d193a96d0ef0.png)
 
 자바스크립트에서 alert는 아래와 같이 사용합니다.
 
@@ -69,7 +69,7 @@ window.alert("경고!");
 
 **window.alert를 했을 때 나오는 UI**
 
-<img width="490" alt="image" src="https://user-images.githubusercontent.com/52201658/180597317-fe3b8e0e-f470-4690-8b98-219f7b44076c.png">
+![window-alert-default-ui](https://user-images.githubusercontent.com/52201658/180597317-fe3b8e0e-f470-4690-8b98-219f7b44076c.png)
 
 ### 자바스크립트 기본 Alert, Confirm의 한계
 
@@ -81,11 +81,11 @@ window.alert("경고!");
 
 **커스텀 컨펌**
 
-<img width="431" alt="image" src="https://user-images.githubusercontent.com/52201658/180635695-b546d226-4d92-40ab-8614-af82f85fd1a8.png">
+![custom-confirm-ui](https://user-images.githubusercontent.com/52201658/180635695-b546d226-4d92-40ab-8614-af82f85fd1a8.png)
 
 **커스텀 알러트**
 
-<img width="485" alt="image" src="https://user-images.githubusercontent.com/52201658/180635702-285917bf-869a-48a6-adaa-f308457c3d89.png">
+![custom-alert-ui](https://user-images.githubusercontent.com/52201658/180635702-285917bf-869a-48a6-adaa-f308457c3d89.png)
 
 ### 디자인은 커스텀하고 싶지만 사용성을 포기하기 싫어
 
