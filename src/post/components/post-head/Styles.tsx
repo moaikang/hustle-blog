@@ -12,7 +12,7 @@ export const Wrapper = styled.section`
 
   & > .title {
     margin-bottom: 38px;
-    line-height: 34px;
+    line-height: 42px;
   }
 
   & > .date {
@@ -24,5 +24,8 @@ export const Wrapper = styled.section`
   & > .divider {
     margin-top: 17px;
     margin-bottom: 17px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
   }
 `;
