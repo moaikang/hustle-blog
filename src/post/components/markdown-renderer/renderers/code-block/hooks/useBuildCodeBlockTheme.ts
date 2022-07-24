@@ -14,7 +14,6 @@ function useBuildCodeBlockTheme() {
 
     const theme = {
       ...vsCodeDarkTheme,
-
       [BASE_THEME_SELECTOR]: {
         ...vsCodeDarkTheme[BASE_THEME_SELECTOR],
         margin: "0",
